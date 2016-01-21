@@ -51,3 +51,26 @@
         
     }
 }
+
+var arr = [0,1,2,3,4,5,6,7];
+
+var br_search = function(a, n){
+    var l = a.length;
+    var half_l = Math.floor(a.length / 2);
+
+    if( a[0] == n ) {
+        console.log(a);
+        return true;
+    } else if( l == 1  && a[0] != n ) {
+        console.log(a);
+        return false
+    } else if( n > a[half_l - 1] ) {
+        console.log(a);
+        return br_search( a.slice( half_l, l), n);
+    } else {
+        console.log(a);
+        return br_search( a.slice( 0, half_l ), n);
+    }
+};
+
+br_search(arr, 5);
